@@ -1,0 +1,36 @@
+   /* //include('sesion.php');
+    include('db-connection.php');
+
+    $opcion = $conexion->real_escape_string($_POST['opcion']);
+
+    //$consulta = $conexion->query("SELECT * FROM 'usuarios'");
+
+    switch($opcion){
+        case 'ingresar':
+            $id_usuario = $conexion->real_escape_string($_POST['id_usuario']);
+            $password = $conexion->real_escape_string($_POST['password']);
+        
+            $sql = "SELECT u.id_usuario, u.password, e.DNI, e.nombre_apellido FROM usuarios u INNER JOIN estudiante e ON u.id_usuario = e.DNI WHERE u.id_usuario = '$id_usuario' AND u.password = '$password'";
+        
+            $resultado = $conexion->query($sql);
+
+            echo $resultado;
+        
+            if ($resultado && $datos = $resultado->fetch_object()) {
+                $acceso = array('exito' => true);
+                header("Content-Type: application/json");
+                echo json_encode($acceso);
+            } else {
+                $acceso = array('invalido' => true);
+                header("Content-Type: application/json");
+                echo json_encode($acceso);
+            }
+        break;
+
+        case 'registrarse':
+            $DNI = $_POST['DNI'];
+            $contraseña = $_POST['contraseña'];
+
+            $sql = $conexion->query("");
+        break;
+    }*/
